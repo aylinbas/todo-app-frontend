@@ -5,5 +5,7 @@ test("should render Todos component", () => {
   render(<Todos />);
   const todoElement = screen.getByTestId("todo-element");
   expect(todoElement).toBeInTheDocument();
-  expect(todoElement).toHaveTextContent("Hello world!");
+  const todoTitle = screen.getByTestId("todo-title");
+  expect(todoTitle).toBeInTheDocument();
+  expect(todoTitle).toHaveTextContent("Add New Todo");
 });

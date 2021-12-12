@@ -1,0 +1,36 @@
+
+
+.titleContainer{
+    font-weight: bold;
+    display: inline-block;
+    width: 10%;
+    text-align: initial;
+}
+
+.inputContainer{
+    border:1px solid #7367F0;
+    border-radius: 16px;
+    padding: 8px;
+}
+.submitButton{
+    background-color:#7367F0 ;
+    border-color: #7367F0;
+    border-radius: 16px;
+    padding: 8px;
+    color: white;
+    width: 10%;
+}
+.container ul li{
+    list-style-type: none;
+    border: 1px solid #7367F0;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 16px;
+    width: 20%;
+
+}
+.title{
+    font-weight: bold;
+    color: #FB8D00;
+    text-align: center;
+}
