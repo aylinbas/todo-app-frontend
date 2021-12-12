@@ -12,11 +12,14 @@ function Todos() {
     evt.preventDefault();
     if (title !== "" && description !== "") {
       axios
-        .post(`http://localhost:8080/`, {
-          title: title,
-          description: description,
-          isDone: "false",
-        })
+        .post(
+          `https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0`,
+          {
+            title: title,
+            description: description,
+            isDone: "false",
+          }
+        )
         .then((res) => {
           const todos = res.data;
 
@@ -29,14 +32,18 @@ function Todos() {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/`).then((res) => {
-      debugger;
-      const todos = res.data;
-      if (todos[0] != null) {
-        var allTodos = Object.entries(Object.entries(todos)[0][1]);
-        setResponse(allTodos);
-      }
-    });
+    axios
+      .get(
+        `https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0`
+      )
+      .then((res) => {
+        debugger;
+        const todos = res.data;
+        if (todos[0] != null) {
+          var allTodos = Object.entries(Object.entries(todos)[0][1]);
+          setResponse(allTodos);
+        }
+      });
   }, []);
 
   useEffect(() => {
