@@ -68,9 +68,7 @@ function Todos() {
     setTodos(todoArr);
   }, [response]);
 
-  return load ? (
-    <h3>acele etme</h3>
-  ) : (
+  return (
     <div data-testid="todo-element" className="todosContainer">
       <h2 data-testid="todo-title">Add New Todo</h2>
       <form onSubmit={handleSubmit}>
