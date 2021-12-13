@@ -15,6 +15,7 @@ function Todos() {
       axios
         .post(
           `https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0`,
+          { withCredentials: true },
           {
             title: title,
             description: description,
@@ -37,7 +38,8 @@ function Todos() {
     console.log("deneme");
     axios
       .get(
-        `https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0`
+        `https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0`,
+        { withCredentials: true }
       )
       .then((res) => {
         const todos = res.data;
