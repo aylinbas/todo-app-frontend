@@ -7,7 +7,6 @@ function Todos() {
   const [description, setDescription] = useState("");
   const [todos, setTodos] = useState([]);
   const [response, setResponse] = useState([]);
-  const [load, setLoad] = useState(false);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -34,7 +33,6 @@ function Todos() {
   };
 
   useEffect(() => {
-    setLoad(true);
     console.log("deneme");
     axios
       .get(
@@ -44,7 +42,7 @@ function Todos() {
       .then((res) => {
         const todos = res.data;
         console.log("deneme denemde", res.data);
-        setLoad(false);
+
         if (todos) {
           var allTodos = Object.entries(Object.entries(todos)[0][1]);
           console.log("response düzenlenecek");
