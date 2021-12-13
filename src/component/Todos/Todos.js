@@ -7,6 +7,7 @@ function Todos() {
   const [description, setDescription] = useState("");
   const [todos, setTodos] = useState([]);
   const [response, setResponse] = useState([]);
+  const [load, setLoad] = useState(false);
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -32,33 +33,42 @@ function Todos() {
   };
 
   useEffect(() => {
+    setLoad(true);
+    console.log("deneme");
     axios
       .get(
         `https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0`
       )
       .then((res) => {
-        debugger;
         const todos = res.data;
-        if (todos[0] != null) {
+        console.log("deneme denemde", res.data);
+        setLoad(false);
+        if (todos) {
           var allTodos = Object.entries(Object.entries(todos)[0][1]);
+          console.log("response düzenlenecek");
           setResponse(allTodos);
+          console.log("response düzenlendi");
         }
       });
   }, []);
 
   useEffect(() => {
-    console.log(response);
+    console.log("response düzenlendi ve değişklik algılandı");
 
     var todoArr = [];
+
     response.map((item) => {
       const myArr = JSON.parse(item[1]);
       todoArr.push(myArr);
+
       return console.log(myArr);
     });
     setTodos(todoArr);
   }, [response]);
 
-  return (
+  return load ? (
+    <h3>acele etme</h3>
+  ) : (
     <div data-testid="todo-element" className="todosContainer">
       <h2 data-testid="todo-title">Add New Todo</h2>
       <form onSubmit={handleSubmit}>
@@ -87,9 +97,9 @@ function Todos() {
       <h2>My Todos</h2>
       <div className="container">
         <ul>
-          {todos.map((todo) => {
+          {todos.map((todo, i) => {
             return (
-              <li>
+              <li key={i}>
                 <div className="title">{todo.title} </div>
                 <span className="description">{todo.description}</span>
               </li>

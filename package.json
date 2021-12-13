@@ -2,7 +2,7 @@
   "name": "todo-app-frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0",
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
