@@ -1,5 +1,5 @@
-import "./App.css";
-import Todos from "./component/Todos/Todos.js";
+import './App.css';
+import Todos from './component/Todos/Todos.js';
 function App() {
   // useEffect(() => {
   //   axios
