@@ -13,7 +13,7 @@ function Todos() {
     if (title !== "" && description !== "") {
       axios
         .post(
-          `https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0`,
+          `https://prefab-mountain-335021.uc.r.appspot.com/`,
           { withCredentials: true },
           {
             title: title,
@@ -33,16 +33,12 @@ function Todos() {
   };
 
   useEffect(() => {
-    console.log("deneme");
     axios
-      .get(
-        `https://8080-1e316105-1adc-490c-b678-5d7376cc7965.cs-europe-west4-bhnf.cloudshell.dev/?authuser=0`,
-        { withCredentials: true }
-      )
+      .get(`https://prefab-mountain-335021.uc.r.appspot.com/`, {
+        withCredentials: true,
+      })
       .then((res) => {
         const todos = res.data;
-        console.log("deneme denemde", res.data);
-
         if (todos) {
           var allTodos = Object.entries(Object.entries(todos)[0][1]);
           console.log("response düzenlenecek");
@@ -53,8 +49,6 @@ function Todos() {
   }, []);
 
   useEffect(() => {
-    console.log("response düzenlendi ve değişklik algılandı");
-
     var todoArr = [];
 
     response.map((item) => {
