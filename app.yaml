@@ -1,3 +1,5 @@
-# [START runtime]
 runtime: nodejs
-env: flex
+handlers:
+ - url: /
+   static_files: build/index.html
+   upload: build/index.html
