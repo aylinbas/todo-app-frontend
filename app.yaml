@@ -1,6 +1,5 @@
 env: standard
 runtime: nodejs12
-service: app-engine-react-demo
 handlers:
 
 - url: /
