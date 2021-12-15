@@ -48,4 +48,6 @@ The project is a basic todo app frontend project developed with React.
 
 In the project, the existence of the todo element, todo title and add button in the Todos component was tested.
 
+After this stage, the project is dockerized.
+
 It was deployed with Google Cloud and netlify after the necessary actions were taken to add todo in the project.
