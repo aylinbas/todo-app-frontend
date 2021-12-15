@@ -1,5 +1,15 @@
-runtime: nodejs12
+# [START runtime]
+runtime: nodejs
+env: flex
+# [END runtime]
+
+# [START handlers]
 handlers:
-- url: /favicon.ico
-  static_files: media/img/favicon.ico
-  upload: media/img/favicon.ico
+ - url: /
+   static_files: build/index.html
+   upload: build/index.html
+
+ - url: /(.*)
+   static_files: build/\1
+   upload: build/(.*)
+# [END handlers]
