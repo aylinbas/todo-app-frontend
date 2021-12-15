@@ -1,6 +1,5 @@
 runtime: nodejs12
 handlers:
 
-- url: /
-  static_dir: build
+
 
