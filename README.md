@@ -1,5 +1,5 @@
 <p align="center">
-    <h3 align="center">Todo App with TypeScript, ReactJS, Formik & Styled-Component</h3>
+    <h3 align="center">Todo App with JavaScript, ReactJS</h3>
     <br />
         <p align="center">
         <a href="https://todo-app-frontend-335117.uc.r.appspot.com/">View Demo Google Cloud🚀</a>
