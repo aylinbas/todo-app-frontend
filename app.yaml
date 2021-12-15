@@ -1,10 +1,10 @@
 env: standard
 runtime: nodejs12
 service: app-engine-react-demo
-
 handlers:
-- url: /
+- url: /.*
   static_files: build/index.html
   upload: build/index.html
 - url: /
   static_dir: build
+
